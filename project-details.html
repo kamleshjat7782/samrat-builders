@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detailed information about Samrat Green Valley - Premium residential plots in Omaxe City, Jaipur">
+    <title>Samrat Green Valley - Project Details | Samrat Builders</title>
+    <link rel="icon" type="image/png" href="assets/images/fav.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-banner {
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .project-banner-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(44, 62, 80, 0.95), transparent);
+            padding: 48px;
+            color: white;
+        }
+        .project-banner-overlay h1 {
+            color: white;
+            margin-bottom: 12px;
+            font-size: 42px;
+        }
+        .project-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+        .overview-item {
+            background: var(--bg-light);
+            padding: 28px 24px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+        .overview-item:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        .overview-item i {
+            font-size: 40px;
+            color: var(--accent-gold);
+            margin-bottom: 14px;
+        }
+        .overview-item h4 {
+            color: var(--primary-color);
+            margin: 12px 0 6px;
+            font-size: 18px;
+        }
+        .overview-item p {
+            color: var(--text-medium);
+            font-size: 15px;
+            margin: 0;
+        }
+        
+        /* Project Image Gallery */
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .project-gallery-item {
+            position: relative;
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .project-gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+        .project-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Amenities */
+        .amenities-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 18px;
+            margin: 40px 0;
+        }
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px 20px;
+            background: var(--bg-light);
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-gold);
+            transition: var(--transition);
+        }
+        .amenity-item:hover {
+            background: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            transform: translateX(5px);
+        }
+        .amenity-item i {
+            color: var(--accent-gold);
+            font-size: 22px;
+        }
+        .amenity-item span {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        
+        /* Price Table */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background: white;
+            box-shadow: var(--shadow-md);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        .price-table th,
+        .price-table td {
+            padding: 18px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--bg-light);
+        }
+        .price-table th {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .price-table tr:hover {
+            background: var(--bg-light);
+        }
+        .price-table td {
+            color: var(--text-dark);
+            font-size: 15px;
+        }
+        
+        /* Site Plan Section */
+        .site-plan-section {
+            background: var(--bg-light);
+            padding: 48px;
+            border-radius: var(--border-radius);
+            margin: 40px 0;
+            text-align: center;
+        }
+        .site-plan-image {
+            max-width: 800px;
+            margin: 32px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        .site-plan-image img {
+            width: 100%;
+            height: auto;
+        }
+        .download-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--accent-gold), #c99a3a);
+            color: white;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(212, 167, 69, 0.3);
+        }
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(212, 167, 69, 0.5);
+        }
+        .download-btn i {
+            font-size: 20px;
+        }
+        
+        /* Enquiry Form */
+        .enquiry-form {
+            background: var(--bg-light);
+            padding: 48px;
+            border-radius: var(--border-radius);
+            margin: 40px 0;
+            box-shadow: var(--shadow-md);
+        }
+        .map-container {
+            height: 450px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin: 40px 0;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .project-banner {
+                height: 350px;
+            }
+            .project-banner-overlay {
+                padding: 32px 24px;
+            }
+            .project-banner-overlay h1 {
+                font-size: 28px;
+            }
+            .overview-item {
+                padding: 24px 20px;
+            }
+            .site-plan-section,
+            .enquiry-form {
+                padding: 32px 24px;
+            }
+            .download-buttons {
+                flex-direction: column;
+            }
+            .download-btn {
+                width: 100%;
+            }
+            .price-table th,
+            .price-table td {
+                padding: 14px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo" style="font-weight: 700;">
+                    <img src="assets/images/logo.png" alt="Samrat Builders Logo">
+                    Samrat <span>Builders</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="btn btn-primary" style="padding: 2px 10px;" >Enquire Now</a></li>
+                </ul>
+                
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Project Banner -->
+    <div class="project-banner">
+        <img src="https://image.pollinations.ai/prompt/Aerial%20view%20of%20modern%20residential%20township%20with%20green%20spaces%2C%20organized%20plots%2C%20wide%20roads%2C%20and%20contemporary%20architecture%20in%20Jaipur%20style%20with%20clear%20blue%20sky?width=1920&height=800&nologo=true" alt="Samrat Green Valley">
+        <div class="project-banner-overlay">
+            <h1>Samrat Green Valley</h1>
+            <p style="font-size: 18px; margin: 0;"><i class="fas fa-map-marker-alt"></i> Omaxe City, Ajmer Road, Jaipur</p>
+        </div>
+    </div>
+
+    <!-- Project Overview -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-primary">Project Overview</h2>
+            <p style="font-size: 17px; line-height: 1.8;">Samrat Green Valley is a premium residential plot project located in the heart of Omaxe City on Ajmer Road, Jaipur. This RERA-approved project offers well-planned plots with modern infrastructure, excellent connectivity, and a serene environment perfect for building your dream home.</p>
+            
+            <div class="project-overview">
+                <div class="overview-item">
+                    <i class="fas fa-certificate"></i>
+                    <h4>RERA Approved</h4>
+                    <p>Fully Registered</p>
+                </div>
+                <div class="overview-item">
+                    <i class="fas fa-ruler-combined"></i>
+                    <h4>Plot Sizes</h4>
+                    <p>100-300 Sq.Yd</p>
+                </div>
+                <div class="overview-item">
+                    <i class="fas fa-rupee-sign"></i>
+                    <h4>Starting Price</h4>
+                    <p>₹25 Lakhs</p>
+                </div>
+                <div class="overview-item">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h4>Total Plots</h4>
+                    <p>250+ Plots</p>
+                </div>
+                <div class="overview-item">
+                    <i class="fas fa-check-circle"></i>
+                    <h4>Status</h4>
+                    <p>Ready to Build</p>
+                </div>
+                <div class="overview-item">
+                    <i class="fas fa-road"></i>
+                    <h4>Road Width</h4>
+                    <p>30-40 Feet</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Image Gallery -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="text-primary">Project Gallery</h2>
+            <p style="margin-bottom: 32px;">Explore images of our project and visualize your future home</p>
+            
+            <div class="project-gallery">
+                <div class="project-gallery-item">
+                    <img src="https://image.pollinations.ai/prompt/Modern%20residential%20plot%20entrance%20gate%20with%20landscaping?width=600&height=400&nologo=true" alt="Project Entrance">
+                </div>
+                <div class="project-gallery-item">
+                    <img src="https://image.pollinations.ai/prompt/Wide%20paved%20roads%20in%20residential%20township%20with%20street%20lights?width=600&height=400&nologo=true" alt="Internal Roads">
+                </div>
+                <div class="project-gallery-item">
+                    <img src="https://image.pollinations.ai/prompt/Beautiful%20landscaped%20park%20in%20residential%20area?width=600&height=400&nologo=true" alt="Community Park">
+                </div>
+                <div class="project-gallery-item">
+                    <img src="https://image.pollinations.ai/prompt/Modern%20children%20play%20area%20with%20equipment?width=600&height=400&nologo=true" alt="Children Play Area">
+                </div>
+                <div class="project-gallery-item">
+                    <img src="https://image.pollinations.ai/prompt/Security%20gate%20with%20guardhouse%20in%20gated%20community?width=600&height=400&nologo=true" alt="Security Gate">
+                </div>
+                <div class="project-gallery-item">
+                    <img src="https://image.pollinations.ai/prompt/Underground%20water%20tank%20and%20infrastructure?width=600&height=400&nologo=true" alt="Infrastructure">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-primary">World-Class Amenities</h2>
+            <p style="margin-bottom: 32px;">Experience modern living with premium amenities designed for your comfort and convenience</p>
+            
+            <div class="amenities-list">
+                <div class="amenity-item">
+                    <i class="fas fa-road"></i>
+                    <span>Wide Internal Roads</span>
+                </div>
+                <div class="amenity-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Street Lighting</span>
+                </div>
+                <div class="amenity-item">
+                    <i class="fas fa-water"></i>
+                    <span>Underground Water Supply</span>
+                </div>
+                <div class="amenity-item">
+                    <i class="fas fa-tint"></i>
+                    <span>Sewage & Drainage System</span>
+                </div>
+                <div class="amenity-item">
+                    <i class="fas fa-bolt"></i>
+                    <span>Underground Electricity</span>
+                </div>
+                <div class="amenity-item">
+                    <i class="fas fa-tree"></i>
+                    <span>Landscaped Gardens</span>
+                </div>
+                <div class="amenity-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>24/7 Security</span>
+                </div>
+                <div class="amenity-item">
+                    <i class="fas fa-video"></i>
+                    <span>CCTV Surveillance</span>
+                </div>
+                <div class="amenity-item">
+                    <i class="fas fa-child"></i>
+                    <span>Children's Play Area</span>
+                </div>
+                <div class="amenity-item">
+                    <i class="fas fa-running"></i>
+                    <span>Jogging Track</span>
+                </div>
+                <div class="amenity-item">
+                    <i class="fas fa-parking"></i>
+                    <span>Ample Parking Space</span>
+                </div>
+                <div class="amenity-item">
+                    <i class="fas fa-dumbbell"></i>
+                    <span>Community Gym</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Site Plan -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="site-plan-section" style="background: white;">
+                <h2 class="text-primary">Master Site Plan</h2>
+                <p style="margin-bottom: 24px; font-size: 17px;">View the complete layout of Samrat Green Valley with plot distribution, roads, and amenities</p>
+                
+                <div class="site-plan-image">
+                    <img src="https://image.pollinations.ai/prompt/Detailed%20master%20site%20plan%20layout%20of%20residential%20township%20showing%20plot%20numbers%2C%20roads%2C%20parks%2C%20and%20amenities%20with%20measurements?width=1200&height=800&nologo=true" alt="Master Site Plan">
+                </div>
+                
+                <div class="download-buttons">
+                    <a href="#" class="download-btn" data-file-type="pdf" data-file-url="assets/images/plan.pdf">
+                        <i class="fas fa-file-pdf"></i>
+                        Download Site Plan (PDF)
+                    </a>
+                    <a href="#" class="download-btn" data-file-type="jpg" data-file-url="assets/images/plan.pdf">
+                        <i class="fas fa-image"></i>
+                        Download Site Plan (Image)
+                    </a>
+                    <a href="#" class="download-btn" data-file-type="pdf" data-file-url="assets/images/plan.pdf">
+                        <i class="fas fa-book"></i>
+                        Download Brochure
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Table -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-primary">Pricing Details</h2>
+            <p style="margin-bottom: 32px;">Transparent pricing for all plot sizes with no hidden charges</p>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Plot Size</th>
+                        <th>Dimensions</th>
+                        <th>Price per Sq.Yd</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>100 Sq.Yd</strong></td>
+                        <td>20' x 45'</td>
+                        <td>₹25,000</td>
+                        <td><strong>₹25,00,000</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>150 Sq.Yd</strong></td>
+                        <td>30' x 45'</td>
+                        <td>₹26,000</td>
+                        <td><strong>₹39,00,000</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>200 Sq.Yd</strong></td>
+                        <td>40' x 45'</td>
+                        <td>₹27,000</td>
+                        <td><strong>₹54,00,000</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>250 Sq.Yd</strong></td>
+                        <td>50' x 45'</td>
+                        <td>₹28,000</td>
+                        <td><strong>₹70,00,000</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>300 Sq.Yd</strong></td>
+                        <td>60' x 45'</td>
+                        <td>₹29,000</td>
+                        <td><strong>₹87,00,000</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 24px; color: var(--text-medium); font-size: 15px;">
+                <strong>Note:</strong> Prices are subject to change. GST and registration charges extra. Bank loan facility available with leading banks.
+            </p>
+        </div>
+    </section>
+
+    <!-- Location Map -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="text-primary">Location Map</h2>
+            <p style="margin-bottom: 32px;">Strategically located on Ajmer Road with excellent connectivity to all major areas of Jaipur</p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227748.99973188356!2d75.65046970868609!3d26.885142923007644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4adf4c57e281%3A0xce1c63a0cf22e09!2sJaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enquiry Form -->
+    <section class="section">
+        <div class="container">
+            <div class="enquiry-form">
+                <h2 class="text-primary text-center">Interested in This Project?</h2>
+                <p class="text-center" style="margin-bottom: 36px; font-size: 17px;">Fill out the form below and our team will contact you within 24 hours</p>
+                
+                <form>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="plot-size">Preferred Plot Size</label>
+                            <select id="plot-size" name="plot-size" class="form-control">
+                                <option value="">Select Plot Size</option>
+                                <option value="100">100 Sq.Yd</option>
+                                <option value="150">150 Sq.Yd</option>
+                                <option value="200">200 Sq.Yd</option>
+                                <option value="250">250 Sq.Yd</option>
+                                <option value="300">300 Sq.Yd</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message"  name="message" class="form-control" rows="5" placeholder="Tell us about your requirements"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px;">
+                        <i class="fas fa-paper-plane"></i> Submit Enquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Samrat Builders</h3>
+                    <p>Your trusted partner for premium real estate in Jaipur. With over 15 years of experience, we deliver quality projects with complete transparency and customer satisfaction.</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About Us</a>
+                        <a href="services.html">Services</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Projects</h3>
+                    <div class="footer-links">
+                        <a href="projects.html">Residential Plots</a>
+                        <a href="projects.html">Luxury Villas</a>
+                        <a href="projects.html">Apartments</a>
+                        <a href="projects.html">Farmhouses</a>
+                        <a href="projects.html">Gated Communities</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Omaxe City, Ajmer Road,<br>Jaipur, Rajasthan 302026</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 9058600686</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="11787f777e5162707c6370657364787d757463623f727e7c">doonsamrat@gmail.com</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Samrat Builders. All Rights Reserved. </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/919058600686" class="floating-btn whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+919058600686" class="floating-btn call-btn">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="" class="lightbox-content">
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Gallery lightbox functionality
+        document.querySelectorAll('.project-gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                const lightbox = document.querySelector('.lightbox');
+                const lightboxImg = document.querySelector('.lightbox-content');
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+    </script>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "qOoBEQEtTo7JnD8-W",
+      });
+   })();
+</script>
+
+</body>
+</html>
